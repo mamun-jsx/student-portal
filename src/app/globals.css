@@ -3,6 +3,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --ec-primary: #5b3d88;
+  --ec-accent: #c53074;
+  --ec-secondary: #19729f;
 }
 
 @theme inline {
@@ -10,13 +13,9 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-ec-primary: var(--ec-primary);
+  --color-ec-accent: var(--ec-accent);
+  --color-ec-secondary: var(--ec-secondary);
 }
 
 body {
