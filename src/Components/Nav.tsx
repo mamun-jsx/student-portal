@@ -2,15 +2,16 @@
 
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
-import { ChevronDown, GraduationCap } from "lucide-react";
+import { ChevronDown, GraduationCap, LogOut } from "lucide-react";
+import { useUser } from "@/hooks/useUser";
+import { useRouter } from "next/navigation";
+import { toast } from "react-hot-toast";
 
 const generalLinks = [
   { name: "Home", href: "/" },
   { name: "Courses", href: "/course" },
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
-  { name: "Login", href: "/login" },
-  { name: "Register", href: "/register" },
 ];
 
 const adminLinks = [
@@ -88,7 +89,6 @@ function Dropdown({ label, links, dotColor }: DropdownProps) {
               id={`nav-link-${link.name.toLowerCase().replace(/\s+/g, "-")}`}
               onClick={() => setOpen(false)}
               className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-white/70 hover:text-white transition-all duration-150 group"
-              style={{}}
               onMouseEnter={(e) => {
                 const el = e.currentTarget;
                 el.style.background = dotColor + "18";
@@ -116,6 +116,17 @@ function Dropdown({ label, links, dotColor }: DropdownProps) {
 }
 
 export default function Nav() {
+  const { user, loading } = useUser();
+  const router = useRouter();
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    document.cookie = "user=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    toast.success("Logged out successfully");
+    router.push("/login");
+    router.refresh();
+  };
+
   return (
     <header
       id="main-nav"
@@ -142,8 +153,31 @@ export default function Nav() {
         {/* Three dropdown sections */}
         <nav id="nav-sections" className="flex items-center gap-1">
           <Dropdown label="General" links={generalLinks} dotColor="#19729f" />
-          <Dropdown label="Admin" links={adminLinks} dotColor="#5b3d88" />
-          <Dropdown label="Student" links={studentLinks} dotColor="#c53074" />
+          
+          {!loading && user?.role === "admin" && (
+            <Dropdown label="Admin" links={adminLinks} dotColor="#5b3d88" />
+          )}
+          
+          {!loading && user?.role === "student" && (
+            <Dropdown label="Student" links={studentLinks} dotColor="#c53074" />
+          )}
+
+          {!loading && user ? (
+            <button
+              onClick={handleLogout}
+              className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold text-white/80 hover:text-white hover:bg-red-500/20 hover:text-red-400 transition-all duration-200"
+            >
+              <LogOut size={16} />
+              Logout
+            </button>
+          ) : (
+            <Link
+              href="/login"
+              className="px-4 py-2 rounded-lg text-sm font-semibold text-white/80 hover:text-white hover:bg-white/10 transition-all duration-200"
+            >
+              Login
+            </Link>
+          )}
         </nav>
       </div>
     </header>
