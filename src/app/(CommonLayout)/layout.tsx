@@ -1,5 +1,5 @@
-import Footer from "@/Components/Footer";
-import Nav from "@/Components/Nav";
+import Footer from "@/components/Footer";
+import Nav from "@/components/Nav";
 
 
 export const dynamic = "force-dynamic";

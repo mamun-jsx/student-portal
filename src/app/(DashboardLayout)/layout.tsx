@@ -1,5 +1,5 @@
-import Nav from "@/Components/Nav";
-import Footer from "@/Components/Footer";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
 import { getUser } from "@/utils/getUser";
 
 interface DashboardLayoutProps {
