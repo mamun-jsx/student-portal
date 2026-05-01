@@ -1,5 +1,9 @@
-import Nav from "@/components/Nav";
-import Footer from "@/components/Footer";
+import { AppSidebar } from "@/components/app-sidebar";
+import {
+  SidebarProvider,
+  SidebarInset,
+  SidebarTrigger,
+} from "@/components/ui/sidebar";
 import { getUser } from "@/utils/getUser";
 
 interface DashboardLayoutProps {
@@ -11,29 +15,24 @@ interface DashboardLayoutProps {
 const DashboardLayout = async ({ student, admin }: DashboardLayoutProps) => {
   const user = await getUser();
   const role = user?.role || "student";
+
   return (
-    <div
-      className="flex flex-col min-h-screen"
-      style={{ background: "var(--background)" }}
-    >
-      <Nav />
-      <main className="flex-grow pt-16 px-6">
-        <div className="max-w-7xl w-full mx-auto py-8 space-y-6">
-          {user && (
-            <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-              <h1 className="text-2xl font-bold text-white">
-                Welcome back, <span className="text-ec-accent">{user.name}</span>!
-              </h1>
-              <p className="text-gray-400">
-                You are logged in as <span className="capitalize">{user.role}</span>.
-              </p>
-            </div>
-          )}
+    <SidebarProvider>
+      <AppSidebar />
+      <SidebarInset>
+        <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4">
+          <SidebarTrigger className="-ml-1" />
+          <div className="flex-1" />
+          {/* We can put another small nav or user profile here later */}
+        </header>
+        <main
+          className="flex-1 overflow-y-auto  "
+          style={{ background: "var(--background)" }}
+        >
           {role === "admin" ? admin : student}
-        </div>
-      </main>
-      <Footer />
-    </div>
+        </main>
+      </SidebarInset>
+    </SidebarProvider>
   );
 };
 
