@@ -7,6 +7,13 @@ import {
   PlusCircle,
   Users,
   Star,
+  History,
+  Trash2,
+  GraduationCap,
+  IdCard,
+  CreditCard,
+  Calendar,
+  ClipboardCheck,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -64,6 +71,41 @@ const studentItems = [
     url: "/dashboard/my-reviews",
     icon: Star,
   },
+  {
+    title: "Registration History",
+    url: "/dashboard/registration-history",
+    icon: History,
+  },
+  {
+    title: "Course Drop",
+    url: "/dashboard/course-drop",
+    icon: Trash2,
+  },
+  {
+    title: "Grades",
+    url: "/dashboard/grades",
+    icon: GraduationCap,
+  },
+  {
+    title: "Admit Card",
+    url: "/dashboard/admit-card",
+    icon: IdCard,
+  },
+  {
+    title: "Payment Dues",
+    url: "/dashboard/payment-dues",
+    icon: CreditCard,
+  },
+  {
+    title: "Academic Calendar",
+    url: "/dashboard/academic-calendar",
+    icon: Calendar,
+  },
+  {
+    title: "Preregistration",
+    url: "/dashboard/preregistration",
+    icon: ClipboardCheck,
+  },
 ];
 
 export function AppSidebar() {
@@ -80,7 +122,7 @@ export function AppSidebar() {
 
   return (
     <Sidebar>
-      <SidebarHeader className="p-4 border-b">
+      <SidebarHeader className="p-4 border-b ">
         <div className="flex items-center gap-2">
           <span className="text-xl font-bold bg-gradient-to-r from-ec-primary to-ec-accent bg-clip-text text-transparent">
             <Link href="/">Student Portal</Link>

@@ -23,12 +23,9 @@ const DashboardLayout = async ({ student, admin }: DashboardLayoutProps) => {
         <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4">
           <SidebarTrigger className="-ml-1" />
           <div className="flex-1" />
-          {/* We can put another small nav or user profile here later */}
+          
         </header>
-        <main
-          className="flex-1 overflow-y-auto  "
-          style={{ background: "var(--background)" }}
-        >
+        <main className="flex-1 overflow-y-auto px-1">
           {role === "admin" ? admin : student}
         </main>
       </SidebarInset>
