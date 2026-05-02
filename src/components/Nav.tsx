@@ -24,7 +24,7 @@ import {
 const menu = [
   { title: "Home", url: "/" },
   { title: "About", url: "/about" },
-  { title: "Courses", url: "/course" },
+  { title: "Tution Fee", url: "/tution-fee" },
   { title: "Contact", url: "/contact" },
 ];
 
