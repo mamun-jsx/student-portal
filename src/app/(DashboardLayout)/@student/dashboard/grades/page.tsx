@@ -5,6 +5,7 @@ const Grades = () => {
       <h1 className="text-red-500 font-bold text-2xl">
         Rasel Mia I have taken this page i shall work on it
       </h1>
+      <h2>Rasel Mia</h2>
       <div className="bg-white/5 border border-white/10 rounded-xl p-6 backdrop-blur-sm">
         <p className="text-gray-400">
           Check your academic performance and grades.
