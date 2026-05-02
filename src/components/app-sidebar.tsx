@@ -14,6 +14,7 @@ import {
   CreditCard,
   Calendar,
   ClipboardCheck,
+  CircleHelp,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -52,6 +53,11 @@ const adminItems = [
     title: "All Students",
     url: "/dashboard/all-students",
     icon: Users,
+  },
+  {
+    title: "Preregistration Request",
+    url: "/dashboard/pre-regristration-req",
+    icon: CircleHelp,
   },
 ];
 
