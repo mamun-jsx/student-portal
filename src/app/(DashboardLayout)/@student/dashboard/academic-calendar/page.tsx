@@ -1,38 +1,7 @@
 "use client";
-
 import React, { useState } from "react";
 import { Calendar as CalendarIcon, Bell, Search } from "lucide-react";
-
-const academicEvents = [
-  {
-    id: 1,
-    title: "Summer Semester Orientation",
-    date: "May 15, 2024",
-    type: "Academic",
-    color: "bg-blue-100 text-blue-700",
-  },
-  {
-    id: 2,
-    title: "Mid-Term Examination",
-    date: "June 20 - June 30, 2024",
-    type: "Exam",
-    color: "bg-red-100 text-red-700",
-  },
-  {
-    id: 3,
-    title: "Eid-ul-Adha Holiday",
-    date: "June 17, 2024",
-    type: "Holiday",
-    color: "bg-green-100 text-green-700",
-  },
-  {
-    id: 4,
-    title: "Final Project Submission",
-    date: "August 05, 2024",
-    type: "Academic",
-    color: "bg-purple-100 text-purple-700",
-  },
-];
+import { academicEvents } from "@/actions/studentsApi/AcademicCalendarApi";
 
 const AcademicCalendarPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -125,7 +94,10 @@ const AcademicCalendarPage = () => {
 
               {/* Icon */}
               <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 hidden sm:block p-2 bg-zinc-100 dark:bg-zinc-800 rounded-full">
-                <Bell size={18} className="text-zinc-500 group-hover:text-blue-500" />
+                <Bell
+                  size={18}
+                  className="text-zinc-500 group-hover:text-blue-500"
+                />
               </div>
             </div>
           ))

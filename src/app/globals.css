@@ -5,9 +5,11 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  /* this is the global color  */
   --ec-primary: #5b3d88;
   --ec-accent: #c53074;
   --ec-secondary: #19729f;
+  /* global color ends */
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
