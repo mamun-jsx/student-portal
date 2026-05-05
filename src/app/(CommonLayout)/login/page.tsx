@@ -15,9 +15,6 @@ export default function LoginPage() {
         <LoginForm />
       </div>
 
-      <footer className="absolute bottom-8 text-gray-500 text-sm">
-        &copy; {new Date().getFullYear()} Student Portal. All rights reserved.
-      </footer>
     </section>
   );
 }
