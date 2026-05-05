@@ -1,15 +1,11 @@
-const MyTickets = async () => {
-  return (
-    <section>
-      <h2 className="bg-blue-700 text-center text-2xl text-white py-4">
-        student Enrolled courses
-      </h2>
+import MyCoursesContent from "@/components/MyCourses/MyCoursesContent";
 
-      <p className="text-red-600 text-7xl">
-        Md Imran Hossain . I have taken my courses to develop .
-      </p>
+const MyCoursesPage = async () => {
+  return (
+    <section className="p-4 md:p-8">
+      <MyCoursesContent />
     </section>
   );
 };
 
-export default MyTickets;
+export default MyCoursesPage;

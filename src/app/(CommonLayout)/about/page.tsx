@@ -1,15 +1,32 @@
 import { getUser } from "@/utils/getUser";
+import AboutHero from "@/components/AboutUs/AboutHero";
+import OurMission from "@/components/AboutUs/OurMission";
+import Stats from "@/components/AboutUs/Stats";
+import AboutHistory from "@/components/AboutUs/AboutHistory";
 
 const About = async () => {
   const user = await getUser();
-  console.log("this is from serveer", user);
+  
   return (
-    <section>
-      <h2 className="bg-blue-700 text-center text-2xl text-white py-4">
-        About page
-      </h2>
-      <h1 className="text-center text-2xl text-white py-4">{user?.name}</h1>
-    </section>
+    <div className="flex flex-col min-h-screen">
+      <AboutHero />
+      
+      {user && (
+        <div className="bg-ec-primary/5 py-4 border-b">
+          <div className="container mx-auto px-4">
+            <p className="text-ec-primary font-medium">
+              Welcome back, <span className="font-bold">{user.name}</span>! It's great to see you on the portal.
+            </p>
+          </div>
+        </div>
+      )}
+
+      <main className="flex-grow">
+        <Stats />
+        <OurMission />
+        <AboutHistory />
+      </main>
+    </div>
   );
 };
 

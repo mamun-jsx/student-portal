@@ -1,7 +1,7 @@
-import GradeSummary from "@/Components/GradeSummary/GradeSummary";
-import GradeChart from "./../../../../../Components/GradeChart/GradeChart";
-import ResultChart from "./../../../../../Components/ResultChart/ResultChart";
-import ExpandableGradeTable from "@/Components/ExpandableGradeTable/ExpandableGradeTable";
+import GradeSummary from "@/components/GradeSummary/GradeSummary";
+import GradeChart from "@/components/GradeChart/GradeChart";
+import ResultChart from "@/components/ResultChart/ResultChart";
+import ExpandableGradeTable from "@/components/ExpandableGradeTable/ExpandableGradeTable";
 
 const Grades = () => {
   return (

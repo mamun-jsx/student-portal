@@ -5,7 +5,7 @@ import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-} from "@/Components/ui/chart";
+} from "@/components/ui/chart";
 
 const chartData = [
   { grade: "A+", count: 0 },

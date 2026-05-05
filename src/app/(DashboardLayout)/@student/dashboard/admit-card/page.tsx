@@ -1,4 +1,4 @@
-import AdmitCardPage from "@/Components/AdmitCard/AdmitCard";
+import AdmitCardPage from "@/components/AdmitCard/AdmitCard";
 const AdmitCard = () => {
   return (
     <div className="p-6">

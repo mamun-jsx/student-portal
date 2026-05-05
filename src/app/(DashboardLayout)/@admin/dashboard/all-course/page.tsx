@@ -1,13 +1,11 @@
+import AllCoursesTable from "@/components/AdminDashboard/AllCoursesTable";
 
-const AllCourse = async () => {
-  
-
+const AllCoursePage = async () => {
   return (
-   <section>
-      <h2 className="bg-blue-700 text-center text-2xl text-white py-4">
-        All  students Admin 
-      </h2></section>
+    <div className="p-4 md:p-8 min-h-screen bg-gray-50/30">
+      <AllCoursesTable />
+    </div>
   );
 };
 
-export default AllCourse;
+export default AllCoursePage;

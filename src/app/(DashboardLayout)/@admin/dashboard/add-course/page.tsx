@@ -1,14 +1,11 @@
+import AddCourseForm from "@/components/AdminDashboard/AddCourseForm";
 
-
-const AddCourse = () => {
-
+const AddCoursePage = () => {
   return (
-    <section>
-      <h2 className="bg-blue-700 text-center text-2xl text-white py-4">
-        Add course Admin Dashboard
-      </h2>
-    </section>
+    <div className="p-4 md:p-8 min-h-screen bg-gray-50/30">
+      <AddCourseForm />
+    </div>
   );
 };
 
-export default AddCourse;
+export default AddCoursePage;
