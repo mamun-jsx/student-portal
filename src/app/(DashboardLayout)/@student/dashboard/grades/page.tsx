@@ -1,11 +1,15 @@
+import GradeSummary from "@/Components/GradeSummary/GradeSummary";
 import GradeChart from "./../../../../../Components/GradeChart/GradeChart";
 import ResultChart from "./../../../../../Components/ResultChart/ResultChart";
+import ExpandableGradeTable from "@/Components/ExpandableGradeTable/ExpandableGradeTable";
 
 const Grades = () => {
   return (
     <div>
-      <GradeChart />
+      <GradeSummary />
       <ResultChart />
+      <GradeChart />
+      <ExpandableGradeTable />
     </div>
   );
 };

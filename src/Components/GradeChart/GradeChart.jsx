@@ -29,8 +29,8 @@ const chartConfig = {
 };
 const GradeChart = () => {
   return (
-    <div className="p-6 bg-white rounded-xl shadow-sm border border-gray-100 mt-9 w-[90%] mx-auto">
-      <h1 className="text-2xl font-bold mb-6 text-primary text-center">
+    <div className="p-6 bg-white rounded-xl shadow-xl border border-gray-100 mt-13 w-[90%] mx-auto ">
+      <h1 className="text-2xl font-bold mb-6 text-sky-500 text-center">
         Grade
       </h1>
 

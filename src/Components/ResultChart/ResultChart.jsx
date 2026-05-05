@@ -39,7 +39,7 @@ const defaultData = [
 
 export default function ResultChart({ data = defaultData }) {
   return (
-    <Card className="w-full rounded-2xl border border-slate-100 shadow-lg">
+    <Card className="max-w-[90%] mx-auto mt-13 rounded-2xl border border-slate-100 shadow-lg">
       <CardHeader className="pb-2 pt-6 text-center">
         <CardTitle className="text-xl font-bold text-sky-500">
           Result Summary
