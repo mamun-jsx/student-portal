@@ -6,13 +6,12 @@ export default function Home() {
       </h2>
       {/*  */}
       <div className="flex flex-col items-center justify-center gap-4 mt-4">
-        <p>
-          Look at the button into home page, which class is attached in this
-          button. You do not need to write tailwindCss for every time into
-          button
-        </p>
-        <button className="btn btn-primary">Click me 1</button>
-        <button className="btn btn-secondary">Click me 2</button>
+        <div>
+          <h2 className="text-center bg-yellow-500 text-white px-4 py-2 rounded-xl font-bold text-lg">
+            Hello thanks for git pull <br />
+            I'm Abdullah Al Mamun, I will work for home page...
+          </h2>
+        </div>
       </div>
     </section>
   );
